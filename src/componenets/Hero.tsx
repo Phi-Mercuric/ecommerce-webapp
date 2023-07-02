@@ -1,6 +1,4 @@
-import React from 'react'
 import tube from '../assets/tube.png'
-
 
 const Hero = () => {
   return (

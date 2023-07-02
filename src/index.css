@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-dark-orange-gradient {
+  background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
+      #e69f5c 5%,
+      #d3873f 30%,
+      #c76f24 50%,
+      #b85c0f 80%,
+      #ca580b 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-dark-orange-gradient:hover {
+  background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
+      #def9fa 0.9%,
+      #f5edbe 17%,
+      #f0dd9d 45%,
+      #ebbb7d 60%,
+      #e69f5c 90%,
+      #d3873f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.text-orange-gradient {
+  background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
+      #def9fa 0.9%,
+      #f5edbe 17%,
+      #f0dd9d 45%,
+      #ebbb7d 60%,
+      #e69f5c 90%,
+      #d3873f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-orange-gradient:hover {
+  background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
+      #e4fcff 17%,
+      #fdffe0 17%,
+      #f5f0be 45%,
+      #f0e29d 60%,
+      #ebd17d 90%,
+      #e6b85c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

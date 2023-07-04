@@ -21,12 +21,12 @@ const HeroSection = (props: HeroProps) => {
             {props.title}
           </a>
           <div>
-            <p className='text-[2.2vw] sm:text-[1.1vw] font-normal ml-6 mb-6 text-gray-300'>
+            <p className='text-[2.2vw] sm:text-[1.1vw] font-normal ml-6 mb-6 text-gray-300 w-[45vw]'>
               {props.description}
             </p>
           </div>
         </div>
-        <div className='flex-col items-start w-[30rem]'>
+        <div className='flex-col items-start'>
           <img className='object-contain w-full flex-grow h-full' src={props.image} alt="" />
         </div>
       </section >
@@ -39,12 +39,12 @@ const Hero = () => {
     <>
       <HeroSection mirror={false} link='artisanalclocks'
         title='Custom Artisanal Clocks'
-        description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, quia, voluptate quod quos dolorum voluptas voluptatibus quae quas fugit. Quisquam voluptatum, quibusdam, quia, voluptate quod quos dolorum voluptas voluptatibus quae quas fugit.'
+        description='From cheap to high quality (or both) Nixie tubes and Nixie tube clock parts with direct links to the source with NO markup.'
         image={tube}
       />
       <HeroSection mirror={true} link='parts'
         title='Affordable Tubes & Parts'
-        description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, quibusdam, quia, voluptate quod quos dolorum voluptas voluptatibus quae quas fugit. Quisquam voluptatum, quibusdam, quia, voluptate quod quos dolorum voluptas voluptatibus quae quas fugit.'
+        description='Hand crafted clocks made by ourenthusiasts and engineersexactly to your specifications.'
         image={tube}
       />
     </>

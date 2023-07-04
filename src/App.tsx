@@ -1,23 +1,17 @@
-import { Navbar, Footer, Hero } from "./componenets"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Home, ArtisanalClocks, Login, Parts } from './pages';
 
-const App = () => (
-  <>
-    <div className="bg-primary">
-      <div className="bg-primary w-full overflow-hidden">
-        <div className="sm:px-16 px-6 flex justify-center items-center">
-          <Navbar></Navbar>
-        </div>
-      </div>
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/artisanalclocks" element={<ArtisanalClocks />} />
+        <Route path="/parts" element={<Parts />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
+};
 
-      <div className="bg-primary justify-center items-start">
-        <div className="xl:max-w-[1280px] w-full">
-          <Footer></Footer>
-        </div>
-      </div>
-
-      <Hero></Hero>
-    </div>
-  </>
-)
-
-export default App
+export default App;

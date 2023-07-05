@@ -16,12 +16,12 @@ const HeroSection = (props: HeroProps) => {
 
   return (
     <div className={`flex justify-center`}>
-      <section style={divStyle} className={`flex sm:py-16 py-6 px-6 justify-end`}>
-        <div className={`flex-col mx-2 sm:mx-40 ${props.mirror ? 'order-last' : 'text-right'} w-[45vw] sm:w-[31vw]`}>
-          <a href={props.link} className='sm:text-3xl font-bold mb-2 text-dark-orange-gradient'>
+      <section style={divStyle} className={`flex sm:py-16 py-6 px-3 sm:px-6 justify-end`}>
+        <div className={`flex-col mx-2 sm:mx-40 w-[60vw] sm:w-[31vw] ${props.mirror ? 'order-last' : 'text-right'}`}>
+          <a href={props.link} className='sm:text-3xl text-[20px] font-bold mb-2 text-dark-orange-gradient'>
             {props.title}
           </a>
-          <p className={`text-[2.2vw] sm:text-[1.1vw] font-normal ${props.mirror ? 'ml-1 sm:ml-3' : 'mr-1 sm:mr-3 ml-auto'} mb-6 text-gray-300`}>
+          <p className={`text-[13px] sm:text-[1.1vw] font-normal mb-6 text-gray-300 ${props.mirror ? 'ml-1 sm:ml-3' : 'mr-1 sm:mr-3 ml-auto'}`}>
             {props.description}
           </p>
         </div>

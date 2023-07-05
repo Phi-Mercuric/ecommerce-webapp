@@ -5,7 +5,9 @@ function Home() {
     <>
       <div className="bg-primary">
         <Navbar />
-        <Hero />
+        <div className="sm:mt-[5vw]">
+          <Hero />
+        </div>
       </div >
       <div className="footer">
         <Footer />

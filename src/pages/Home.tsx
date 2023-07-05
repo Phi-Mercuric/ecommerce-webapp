@@ -2,12 +2,15 @@ import { Navbar, Footer, Hero } from "../componenets"
 
 function Home() {
   return (
-    <div className="bg-primary">
-      <Navbar />
-      <Hero />
-      <Footer />
-    </div >
-
+    <>
+      <div className="bg-primary">
+        <Navbar />
+        <Hero />
+      </div >
+      <div className="footer">
+        <Footer />
+      </div>
+    </>
   )
 }
 

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.orange {
+  color: rgb(185, 85, 46);
+}
+
 .text-dark-orange-gradient {
   background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
       #e69f5c 5%,

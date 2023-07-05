@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center bg-primary overflow-hidden sm:px-16 px-6">
-      <a href="/" className="text-white text-3xl font-bold text-orange-gradient">NixieCraft</a>
+      <a href="/" className="text-3xl font-bold text-orange-gradient">NixieCraft</a>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (

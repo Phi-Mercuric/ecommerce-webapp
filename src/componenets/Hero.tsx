@@ -16,19 +16,17 @@ const HeroSection = (props: HeroProps) => {
 
   return (
     <div className={`flex justify-center`}>
-      <section style={divStyle} className={`flex sm:py-16 py-6 px-12 justify-center`}>
-        <div className={`flex-col sm:mx-20 ${props.mirror ? 'order-last' : 'text-right'}`}>
+      <section style={divStyle} className={`flex sm:py-16 py-6 px-6 justify-end`}>
+        <div className={`flex-col mx-2 sm:mx-40 ${props.mirror ? 'order-last' : 'text-right'} w-[45vw] sm:w-[31vw]`}>
           <a href={props.link} className='sm:text-3xl font-bold mb-2 text-dark-orange-gradient'>
             {props.title}
           </a>
-          <div>
-            <p className={`text-[2.2vw] sm:text-[1.1vw] font-normal ${props.mirror ? 'ml-3' : 'mr-2'} mb-6 text-gray-300 w-[31vw]`}>
-              {props.description}
-            </p>
-          </div>
+          <p className={`text-[2.2vw] sm:text-[1.1vw] font-normal ${props.mirror ? 'ml-1 sm:ml-3' : 'mr-1 sm:mr-3 ml-auto'} mb-6 text-gray-300`}>
+            {props.description}
+          </p>
         </div>
-        <div className='flex-col items-start'>
-          <img className='object-contain w-full flex-grow h-full max-h-[15vw]' src={props.image} alt="" />
+        <div className='flex items-center w-[30vw] sm:w-auto justify-center'>
+          <img className='max-h-[22vw] sm:max-h-[15vw]' src={props.image} alt={`Image for ${props.title}`} />
         </div>
       </section >
     </div>

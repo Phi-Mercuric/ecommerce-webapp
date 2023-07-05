@@ -5,7 +5,11 @@ function Login() {
     <>
       <div className="bg-primary">
         <Navbar />
+
+        <div className="mt-20 flex items-center">
+        </div>
       </div >
+
       <div className="footer">
         <Footer />
       </div>

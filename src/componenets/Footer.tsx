@@ -15,21 +15,21 @@ const Footer = () => {
       </div>
       <div className='flex flex-row w-full justify-evenly'>
         <div className="flex flex-col sm:mt-3 items-start sm:pl-10">
-          <h3 className="text-[1.7vw] sm:text-bg text-gray-400 mb-4"> Pages </h3>
+          <h3 className="text-[1.7vw] sm:text-bg text-gray-400 mb-2 sm:mb-4"> Pages </h3>
           {pages.map((page, index) => (
             <a key={page.link} href={page.link}
-              className={`font-poppins text-[10px] sm:text-base cursor-pointer orange ${index === pages.length - 1 ? 'mr-0' : 'mr-10'}`}
+              className={`font-poppins text-[8px] sm:text-base cursor-pointer orange ${index === pages.length - 1 ? 'mb-0' : 'mb-1 sm:mb-3'}`}
             >
               {page.title}
             </a>
           ))};
         </div>
         <div className="flex flex-col sm:mt-3 items-start sm:pl-10">
-          <h3 className="text-[1.7vw] sm:text-bg text-gray-400 mb-4"> Social Media </h3>
-          <div className='grid grid-cols-2'>
+          <h3 className="text-[1.7vw] sm:text-bg text-gray-400 mb-2 sm:mb-4"> Social Media </h3>
+          <div className='grid grid-cols-2 gap-3 sm:gap-x-12 sm:gap-y-5 sm:mx-4'>
             {socialLinks.map((social, index) => (
               <a key={social.link} href={social.link}
-                className={`max-w-[10px] sm:max-w-[50px] font-poppins grid-item text-[10px] sm:text-base cursor-pointer orange ${index === pages.length - 1 ? 'mr-0' : 'mr-10'}`}
+                className={`max-w-[15px] sm:max-w-[50px] font-poppins grid-item text-[10px] sm:text-base cursor-pointer orange`}
               >
                 <img src={social.icon} alt={social.link} />
               </a>

@@ -5,12 +5,17 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   mode: 'production',
   build: {
+    minify: 'terser',
     outDir: 'dist',
-    assetHashLength: 8, // Enable asset hashing with 8-character hash
     cssCodeSplit: true,
+    rollupOptions: {
+      treeshake: true,
+      input: 'index.html',
+    },
   },
   plugins: [react()],
-    server: {
+  server: {
     port: 8080,
   },
+
 })

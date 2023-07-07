@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Navbar, Footer } from "../componenets"
 
 function Login() {
@@ -11,7 +12,7 @@ function Login() {
             <h2 className="text-2xl border-b-2 w-full border-gray-600 text-center p-5">Log In</h2>
             <form className="flex flex-col p-20">
               <input type="text"
-                placeholder="Username"
+                placeholder="Email"
                 className="bg-transparent border-b border-gray-600 text-gray-300 mb-4"
               />
               <input type="password"
@@ -19,7 +20,7 @@ function Login() {
                 className="bg-transparent border-b border-gray-600 text-gray-300 mb-4"
               />
               <button className="bg-gray-600 rounded-lg py-2 text-gray-300">Log In</button>
-              <a href="" className="text-orange-gradient mt-5">Register</a>
+              <Link to="/register" className="text-orange-gradient mt-5">Register</Link>
             </form>
           </div>
         </div>

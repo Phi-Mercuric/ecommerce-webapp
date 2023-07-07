@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { navLinks } from "../constants/navlinks"
 import { menu, close } from "../assets"
+import { Link } from "react-router-dom"
 import "./navbar.css"
 
 const Navbar = () => {
@@ -8,14 +9,14 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center bg-primary overflow-hidden sm:px-16 px-6">
-      <a href="/" className="text-3xl font-bold text-orange-gradient">NixieCraft</a>
+      <Link to="/" className="text-3xl font-bold text-orange-gradient">NixieCraft</Link>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li key={nav.link}
             className={`mx-4 text-lg font-poppins font-normal cursor-pointer text-[16px] text-dark-orange-gradient ${index === navLinks.length - 1 ? 'mr-0' : 'mr-10'}`}
           >
-            <a href={nav.link} className="capitalize">{nav.text}</a>
+            <Link to={nav.link} className="capitalize">{nav.text}</Link>
           </li>
         ))}
       </ul>
@@ -33,7 +34,7 @@ const Navbar = () => {
               <li key={nav.link}
                 className={`text-dark-orange-gradient text-lg font-poppins font-normal ${index === navLinks.length - 1 ? 'mr-0' : 'mb-2'} cursor-pointer text-[16px]`}
               >
-                <a href={nav.link} className="capitalize">{nav.text}</a>
+                <Link to={nav.link} className="capitalize">{nav.text}</Link>
               </li>
             ))}
           </ul>

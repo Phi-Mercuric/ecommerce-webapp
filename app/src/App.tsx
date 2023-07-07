@@ -5,8 +5,7 @@ import { lazy, Suspense } from 'react';
 const ArtisanalClocks = lazy(() => import('./pages/ArtisanalClocks'));
 const Parts = lazy(() => import('./pages/Parts'));
 const LogIn = lazy(() => import('./pages/Login'));
-
-
+const Register = lazy(() => import('./pages/Register'));
 
 const App = () => {
   return (
@@ -34,6 +33,14 @@ const App = () => {
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <LogIn />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <Register />
             </Suspense>
           }
         />

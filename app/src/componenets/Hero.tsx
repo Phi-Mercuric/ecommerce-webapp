@@ -1,5 +1,6 @@
 import tube from '../assets/tube.webp'
 import clock from '../assets/clock.webp'
+import { Link } from 'react-router-dom'
 
 interface HeroProps {
   mirror: boolean
@@ -18,9 +19,9 @@ const HeroSection = (props: HeroProps) => {
     <div className={`flex justify-center`}>
       <section style={divStyle} className={`flex sm:py-16 py-6 px-3 sm:px-6 justify-end`}>
         <div className={`flex-col mx-2 sm:mx-40 w-[60vw] sm:w-[31vw] ${props.mirror ? 'order-last' : 'text-right'}`}>
-          <a href={props.link} className='sm:text-3xl text-[20px] font-bold mb-2 text-dark-orange-gradient'>
+          <Link to={props.link} className='sm:text-3xl text-[20px] font-bold mb-2 text-dark-orange-gradient'>
             {props.title}
-          </a>
+          </Link>
           <p className={`text-[13px] sm:text-[1.1vw] font-normal mb-6 text-gray-300 ${props.mirror ? 'ml-1 sm:ml-3' : 'mr-1 sm:mr-3 ml-auto'}`}>
             {props.description}
           </p>

@@ -8,10 +8,10 @@ export default defineConfig({
     minify: 'terser',
     outDir: 'dist',
     cssCodeSplit: true,
-    rollupOptions: {
-      treeshake: true,
-      input: 'index.html',
-    },
+    // rollupOptions: {
+    //   treeshake: true,
+    //   input: 'index.html',
+    // },
   },
   plugins: [react()],
   server: {

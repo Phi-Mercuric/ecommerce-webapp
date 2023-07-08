@@ -1,0 +1,2 @@
+CREATE ROLE webapp WITH LOGIN PASSWORD 'password';
+

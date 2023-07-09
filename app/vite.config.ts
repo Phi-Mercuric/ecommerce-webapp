@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import wasm from "vite-plugin-wasm";
 import topLevelAwait from "vite-plugin-top-level-await";
 import { visualizer } from 'rollup-plugin-visualizer';
+import { splitVendorChunkPlugin } from 'vite'
 
 
 // https://vitejs.dev/config/
@@ -13,11 +14,15 @@ export default defineConfig({
     outDir: 'dist',
     cssCodeSplit: true,
     rollupOptions: {
+      manualChunks: {
+        zxcvbn: ['zxcvbn'],
+      },
       treeshake: true,
       input: 'index.html',
     },
   },
   plugins: [
+    react(),
     wasm(),
     topLevelAwait({
       // The export name of top-level await promise for each chunk module

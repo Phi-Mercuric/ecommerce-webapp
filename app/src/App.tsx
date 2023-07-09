@@ -5,7 +5,7 @@ const Home = lazy(() => import('./pages/Home'));
 const ArtisanalClocks = lazy(() => import('./pages/ArtisanalClocks'));
 const Parts = lazy(() => import('./pages/Parts'));
 const LogIn = lazy(() => import('./pages/Login'));
-const Register = lazy(() => import('./pages/Register'));
+const Register = lazy(() => import('./pages/register/Register'));
 
 const App = () => {
   return (

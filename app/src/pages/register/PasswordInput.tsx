@@ -6,7 +6,7 @@ interface Props {
   setpasswd: (value: string) => void;
 }
 
-const PasswdStrengthBar = forwardRef<HTMLInputElement, Props>((props, ref: Ref<HTMLInputElement>) => {
+export default forwardRef<HTMLInputElement, Props>((props, ref: Ref<HTMLInputElement>) => {
   const [errors, setErrors] = useState('');
 
   const result = zxcvbn(props.passwd);
@@ -40,5 +40,3 @@ const PasswdStrengthBar = forwardRef<HTMLInputElement, Props>((props, ref: Ref<H
     </div>
   );
 });
-
-export default PasswdStrengthBar;

@@ -69,7 +69,7 @@ export default () => {
       if (response.ok) {
         window.location.href = "/login";
       } else {
-        if (response.status === 401) {
+        if (response.status === 461) {
           email.setErr('Email is already used');
           email.setCSS('border-red-500');
           emailref.current?.focus();
@@ -77,6 +77,7 @@ export default () => {
         } else if (response.status === 462) {
           uname.setErr('Username is already used');
           uname.setCSS('border-red-500');
+          unameref.current?.focus();
         }
       }
     } catch (e) {

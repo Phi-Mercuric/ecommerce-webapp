@@ -10,9 +10,10 @@ export const initdb = async () => {
   await db.query(`
     CREATE TABLE IF NOT EXISTS users (
       id SERIAL PRIMARY KEY,
-      name VARCHAR(30) NOT NULL,
+      username VARCHAR(30) UNIQUE NOT NULL,
       email VARCHAR(50) UNIQUE NOT NULL,
       password VARCHAR(255) NOT NULL
     );
+    CREATE INDEX ON users (username);
   `);
 }

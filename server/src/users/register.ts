@@ -8,23 +8,30 @@ const dbg = debug('server:users');
 const router = Router();
 
 router.post('/register', async (req, res) => {
-  dbg("New user registration ", req.body, "\n{");
+  dbg("New user registration ", req.body.username, ', ', req.body.email, "\n{");
   const { error } = userSchema.validate(req.body);
   if (error) {
     dbg("\tValidation error: ", error, "\n}");
     return res.status(400).send(error.details[0].message);
   }
 
-  const { name, email, password } = req.body;
+  const { username, email, password } = req.body;
 
-  const emails = await db.query('SELECT email FROM users WHERE email = $1', [email]);
-  if (emails.rows.length > 0) {
+  const emails = await db.query('SELECT EXISTS(SELECT 1 FROM users WHERE email = $1)', [email]);
+  if (emails.rows[0].exists) {
     dbg("\tEmail already exists\n}")
-    return res.status(400).send('Email already exists');
+    return res.status(461).send('Email already exists');
   }
 
-  db.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)',
-    [name,
+  const usernames = await db.query('SELECT EXISTS(SELECT 1 FROM users WHERE username = $1)', [username]);
+  if (usernames.rows[0].exists) {
+    dbg("\tUsername already exists\n}")
+    return res.status(462).send('Username already exists');
+  }
+
+
+  db.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3)',
+    [username,
       email,
       await argon2.hash(password).catch((e) => {
         console.log("Password hashing error ", e);
@@ -34,14 +41,8 @@ router.post('/register', async (req, res) => {
 
     (err, result) => {
       if (err) {
-        if (err.name === 'ValidationError') {
-          dbg("\tValidation error: ", err, "\n}");
-          return res.status(400).send('Email already exists');
-        } else {
-          dbg("\tDatabase error: ", err, "\n}");
-          console.error(err);
-          return res.status(500).send('Internal Server Error');
-        }
+        console.log("\tDatabase error: ", err, "\n}");
+        return res.status(500).send('Internal Server Error');
       }
 
       res.status(201).send('User created');

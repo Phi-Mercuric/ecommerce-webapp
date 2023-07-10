@@ -1,4 +1,4 @@
-import { useState, useRef, ChangeEvent } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import zxcvbn from "zxcvbn";
 import argon2 from 'argon2-wasm-esm';
@@ -28,11 +28,6 @@ const Register = () => {
       uname.setCSS('');
       return true;
     }
-  }
-
-  const unameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    validateUname(e.target.value);
-    uname.set(e.target.value);
   }
 
   const onSubmit = async (data: React.FormEvent<HTMLFormElement>) => {

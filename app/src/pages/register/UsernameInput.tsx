@@ -1,12 +1,7 @@
-import Joi from "joi";
 import { ChangeEvent, Ref, forwardRef } from "react";
-import { subComponentProps } from "./Lib";
+import { subComponentProps, validateUname } from "./Lib";
 
-export const validateUname = (uname: string) => {
-  return Joi.string().min(3).max(30).required().validate(uname).error ? true : false;
-}
-
-export default forwardRef<HTMLInputElement, subComponentProps>((props, ref: Ref<HTMLInputElement>) => {
+const UsernameInput = forwardRef<HTMLInputElement, subComponentProps>((props, ref: Ref<HTMLInputElement>) => {
 
   const unameChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (validateUname(e.target.value)) {
@@ -32,3 +27,5 @@ export default forwardRef<HTMLInputElement, subComponentProps>((props, ref: Ref<
     </>
   )
 });
+
+export default UsernameInput;

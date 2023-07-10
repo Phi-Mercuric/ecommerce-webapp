@@ -1,4 +1,16 @@
 import React, { useRef, useState } from "react";
+import isEmail from 'email-validator'
+import Joi from 'joi';
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const validateEmail = (email: string) => {
+  return isEmail.validate(email);
+}
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const validateUname = (uname: string) => {
+  return Joi.string().min(3).max(30).required().validate(uname).error ? true : false;
+}
 
 export interface subComponentProps {
   val: string,
@@ -9,9 +21,9 @@ export interface subComponentProps {
   setCSS: (value: string) => void
 }
 
-export const newProps = () => {
+export const NewProps = () => {
 
-  let ref = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>(null);
   const [val, set] = useState('');
   const [err, setErr] = useState('');
   const [css, setCSS] = useState('');

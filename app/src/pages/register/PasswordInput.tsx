@@ -6,6 +6,7 @@ interface Props {
   setpasswd: (value: string) => void;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default forwardRef<HTMLInputElement, Props>((props, ref: Ref<HTMLInputElement>) => {
   const [errors, setErrors] = useState('');
 

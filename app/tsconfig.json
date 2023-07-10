@@ -22,8 +22,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  "typeRoots": [
+    "./node_modules/@types",
+    "./@types"
+  ],
   "include": [
-    "src"
+    "src",
+    "@types"
   ],
   "references": [
     {

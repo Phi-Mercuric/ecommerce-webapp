@@ -1,21 +1,21 @@
 import { useState, useRef, ChangeEvent } from "react";
-import { Navbar, Footer } from "../../componenets"
-import PasswdStrengthBar from "./PasswordInput";
-import EmailInput from "./EmailInput";
 import { Link } from "react-router-dom";
 import zxcvbn from "zxcvbn";
 import argon2 from 'argon2-wasm-esm';
-import { validateEmail } from "./EmailInput";
 import joi from 'joi';
-import { newProps } from "./Lib";
-import UsernameInput from "./UsernameInput";
 
-export default () => {
+import { NewProps, validateEmail } from "./Lib";
+import { Navbar, Footer } from "../../componenets"
+import PasswdStrengthBar from "./PasswordInput";
+import UsernameInput from "./UsernameInput";
+import EmailInput from "./EmailInput";
+
+const Register = () => {
   const [passwd, setpasswd] = useState('');
   const passwdInp = useRef<HTMLInputElement>(null);
 
-  const [email, emailref] = newProps();
-  const [uname, unameref] = newProps();
+  const [email, emailref] = NewProps();
+  const [uname, unameref] = NewProps();
 
   const validateUname = (inpUname: string) => {
     const res = joi.string().min(3).max(30).required().validate(inpUname);
@@ -45,12 +45,13 @@ export default () => {
     }
 
     const getHash = async (inp: string) => {
-      let hash: string = '';
+      let hash = '';
       await argon2
-        .hash({ pass: { inp }, salt: 'somesalt' })
+        .hash({ pass: inp, salt: 'somesalt' })
         .then(h => hash = h.hashHex)
         .catch(e => console.error(e.message, e.code));
       if (!hash) throw new Error('Hash is empty');
+      console.log(hash);
       return hash;
     }
 
@@ -115,3 +116,5 @@ export default () => {
     </>
   )
 }
+
+export default Register;

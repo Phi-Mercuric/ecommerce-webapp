@@ -12,7 +12,10 @@ router.post('/register', async (req, res) => {
   const { error } = userSchema.validate(req.body);
   if (error) {
     dbg("\tValidation error: ", error, "\n}");
-    return res.status(400).send(error.details[0].message);
+    if (error.details[0].type === 'string.email')
+      return res.status(461).send(error.details[0].message);
+    else
+      return res.status(462).send(error.details[0].message);
   }
 
   const { username, email, password } = req.body;

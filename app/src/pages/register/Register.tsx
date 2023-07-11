@@ -65,15 +65,28 @@ const Register = () => {
       if (response.ok) {
         window.location.href = "/login";
       } else {
-        if (response.status === 461) {
-          email.setErr('Email is already used');
-          email.setCSS('border-red-500');
-          emailref.current?.focus();
-          return;
-        } else if (response.status === 462) {
-          uname.setErr('Username is already used');
-          uname.setCSS('border-red-500');
-          unameref.current?.focus();
+        switch (response.status) {
+          case 461:
+            email.setErr('Email is not valid');
+            email.setCSS('border-red-500');
+            emailref.current?.focus();
+            break;
+          case 462:
+            uname.setErr('Username is not valid');
+            uname.setCSS('border-red-500');
+            unameref.current?.focus();
+            break;
+          case 471:
+            email.setErr('Email is already used');
+            email.setCSS('border-red-500');
+            emailref.current?.focus();
+            break;
+          case 472:
+            uname.setErr('Username is already used');
+            uname.setCSS('border-red-500');
+            unameref.current?.focus();
+            break;
+
         }
       }
     } catch (e) {

@@ -1,6 +1,5 @@
-import tube from '../assets/tube.webp'
-import clock from '../assets/clock.webp'
 import { Link } from 'react-router-dom'
+import { clock, tube } from '../../../assets'
 
 interface HeroProps {
   mirror: boolean

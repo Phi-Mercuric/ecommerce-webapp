@@ -1,4 +1,5 @@
-import { Navbar, Footer, Hero } from "../componenets"
+import { Navbar, Footer } from "../../componenets"
+import Hero from "./components/Hero"
 
 function Home() {
   return (

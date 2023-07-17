@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Navbar, Footer } from "../componenets"
+import { Navbar, Footer } from "../../componenets"
 
 function Login() {
   return (

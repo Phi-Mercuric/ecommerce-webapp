@@ -1,4 +1,4 @@
-import { Navbar, Footer } from "../componenets"
+import { Navbar, Footer } from "../../componenets"
 
 function Parts() {
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   speed: number
 }
 
-const AnimatedLine = (props: Props) => {
+function AnimatedLine(props: Props) {
   const [lineWidth, setLineWidth] = useSpring(() => ({ width: `${props.start}%` }));
 
   useEffect(() => {

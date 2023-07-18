@@ -1,7 +1,7 @@
-import { Navbar, Footer } from "../../componenets"
-import { clock } from '../../assets'
+import { Navbar, Footer } from "../../../componenets"
+import { clock } from '../../../assets'
 import AnimatedLine from "./AnimatedLine"
-import Site from "./Site"
+import Site from "../Site"
 
 function ArtisanalClocks() {
   return (

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
 const Home = lazy(() => import('./pages/home/Home'));
-const ArtisanalClocks = lazy(() => import('./pages/artisanalclocks/ArtisanalClocks'));
+const ArtisanalClocks = lazy(() => import('./pages/artisanalclocks/components/ArtisanalClocks'));
 const Parts = lazy(() => import('./pages/parts/Parts'));
 const LogIn = lazy(() => import('./pages/login/Login'));
 const Register = lazy(() => import('./pages/register/Register'));

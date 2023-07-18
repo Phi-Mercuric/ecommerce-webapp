@@ -33,7 +33,7 @@ const HeroSection = (props: HeroProps) => {
   )
 }
 
-const Hero = () => {
+export default function Hero() {
   return (
     <>
       <HeroSection mirror={false} link='artisanalclocks'
@@ -49,5 +49,3 @@ const Hero = () => {
     </>
   )
 }
-
-export default Hero

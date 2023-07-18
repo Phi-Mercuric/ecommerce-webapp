@@ -2,7 +2,7 @@ import { ChangeEvent, Ref, forwardRef } from "react";
 import { subComponentProps, validateEmail } from "./Lib";
 
 
-const EmailInput = forwardRef<HTMLInputElement, subComponentProps>((props, ref: Ref<HTMLInputElement>) => {
+export default forwardRef<HTMLInputElement, subComponentProps>((props, ref: Ref<HTMLInputElement>) => {
   const onEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     props.set(e.target.value);
     if (validateEmail(e.target.value)) {
@@ -27,5 +27,3 @@ const EmailInput = forwardRef<HTMLInputElement, subComponentProps>((props, ref: 
     </>
   )
 });
-
-export default EmailInput;

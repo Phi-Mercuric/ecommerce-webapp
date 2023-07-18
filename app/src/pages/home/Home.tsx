@@ -1,7 +1,7 @@
 import { Navbar, Footer } from "../../componenets"
 import Hero from "./components/Hero"
 
-function Home() {
+export default function Home() {
   return (
     <>
       <div className="bg-primary">
@@ -16,5 +16,3 @@ function Home() {
     </>
   )
 }
-
-export default Home

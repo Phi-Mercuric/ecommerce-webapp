@@ -1,6 +1,6 @@
 import { Navbar, Footer } from "../../componenets"
 
-function Parts() {
+export default function Parts() {
   return (
     <>
       <div className="bg-primary">
@@ -12,5 +12,3 @@ function Parts() {
     </>
   )
 }
-
-export default Parts

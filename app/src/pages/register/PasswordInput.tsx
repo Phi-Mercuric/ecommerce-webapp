@@ -7,6 +7,8 @@ interface Props {
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
+// try to name this component
+// PasswordInput:
 export default forwardRef<HTMLInputElement, Props>((props, ref: Ref<HTMLInputElement>) => {
   const [errors, setErrors] = useState('');
 

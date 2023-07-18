@@ -10,7 +10,7 @@ import PasswdStrengthBar from "./PasswordInput";
 import UsernameInput from "./UsernameInput";
 import EmailInput from "./EmailInput";
 
-const Register = () => {
+export default function Register() {
   const [passwd, setpasswd] = useState('');
   const passwdInp = useRef<HTMLInputElement>(null);
 
@@ -124,5 +124,3 @@ const Register = () => {
     </>
   )
 }
-
-export default Register;

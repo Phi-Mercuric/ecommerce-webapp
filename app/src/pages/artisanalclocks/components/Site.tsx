@@ -5,7 +5,7 @@ type ParentComponentProps = {
   children: ReactNode;
 };
 
-function Site({ title, children }: ParentComponentProps) {
+export default function Site({ title, children }: ParentComponentProps) {
   return (
     <section className="flex flex-row mt-20 items-center justify-center">
       <h2 className="text-orange-600 text-[13px] sm:text-[40px] w-[10vw] mr-20 text-center">
@@ -17,5 +17,3 @@ function Site({ title, children }: ParentComponentProps) {
     </section>
   )
 }
-
-export default Site;

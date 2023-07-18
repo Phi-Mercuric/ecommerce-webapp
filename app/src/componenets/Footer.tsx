@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { pages, socialLinks } from '../constants/footerlinks'
 
-const Footer = () => {
+export default function Footer() {
   return (
     <section className="flex flex-col items-center sm:py-16 py-6 pl-6 sm:px-32 w-full">
       <div className="flex items-start flex-col sm:flex-row mb-4 self-start">
@@ -40,5 +40,3 @@ const Footer = () => {
     </section>
   )
 }
-
-export default Footer

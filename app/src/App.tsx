@@ -7,7 +7,7 @@ const Parts = lazy(() => import('./pages/parts/Parts'));
 const LogIn = lazy(() => import('./pages/login/Login'));
 const Register = lazy(() => import('./pages/register/Register'));
 
-const App = () => {
+export default function App() {
   return (
     <Router>
       <Routes>
@@ -48,5 +48,3 @@ const App = () => {
     </Router>
   );
 };
-
-export default App;

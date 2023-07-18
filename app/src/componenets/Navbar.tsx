@@ -4,7 +4,7 @@ import { menu, close } from "../assets"
 import { Link } from "react-router-dom"
 import "./navbar.css"
 
-const Navbar = () => {
+export default function Navbar() {
   const [toggle, setToggle] = useState(false)
 
   return (
@@ -43,5 +43,3 @@ const Navbar = () => {
     </nav>
   )
 }
-
-export default Navbar

@@ -3,7 +3,7 @@ import { clock } from '../../assets'
 import AnimatedLine from "./components/AnimatedLine"
 import Site from "./components/Site"
 
-function ArtisanalClocks() {
+export default function ArtisanalClocks() {
   return (
     <>
       <div className="bg-primary">
@@ -106,5 +106,3 @@ function ArtisanalClocks() {
     </>
   )
 }
-
-export default ArtisanalClocks

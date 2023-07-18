@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { Navbar, Footer } from "../../componenets"
 
-function Login() {
+export default function Login() {
   return (
     <>
       <div className="bg-primary">
@@ -32,5 +32,3 @@ function Login() {
     </>
   )
 }
-
-export default Login

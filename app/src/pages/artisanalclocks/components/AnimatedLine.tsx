@@ -7,7 +7,7 @@ interface Props {
   speed: number
 }
 
-function AnimatedLine(props: Props) {
+export default function AnimatedLine(props: Props) {
   const [lineWidth, setLineWidth] = useSpring(() => ({ width: `${props.start}%` }));
 
   useEffect(() => {
@@ -36,5 +36,3 @@ function AnimatedLine(props: Props) {
     />
   );
 };
-
-export default AnimatedLine;

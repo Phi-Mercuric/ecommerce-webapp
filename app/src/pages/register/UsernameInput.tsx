@@ -1,7 +1,9 @@
 import { ChangeEvent, Ref, forwardRef } from "react";
 import { subComponentProps, validateUname } from "./Lib";
 
-const UsernameInput = forwardRef<HTMLInputElement, subComponentProps>((props, ref: Ref<HTMLInputElement>) => {
+// try to name this component
+// UsernameInput:
+export default forwardRef<HTMLInputElement, subComponentProps>((props, ref: Ref<HTMLInputElement>) => {
 
   const unameChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (validateUname(e.target.value)) {
@@ -27,5 +29,3 @@ const UsernameInput = forwardRef<HTMLInputElement, subComponentProps>((props, re
     </>
   )
 });
-
-export default UsernameInput;

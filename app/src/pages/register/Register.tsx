@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import zxcvbn from "zxcvbn";
 import argon2 from 'argon2-wasm-esm';
 import joi from 'joi';
 
@@ -34,10 +33,17 @@ export default function Register() {
     data.preventDefault();
     if (!validateEmail(email.val) || !validateUname(uname.val)) return;
 
-    if (Math.log2(zxcvbn(passwd).guesses) < 22) {
-      passwdInp.current?.focus();
-      return;
+    try {
+      const zxcvbn = await import('zxcvbn');
+      if (Math.log2(zxcvbn.default(passwd).guesses) < 22) {
+        passwdInp.current?.focus();
+        return;
+      }
+    } catch (error) {
+      console.error('Error loading module or calculating password strength:', error);
+      return null;
     }
+
 
     const getHash = async (inp: string) => {
       let hash = '';

@@ -1,6 +1,6 @@
 import { Navbar, Footer } from "../../componenets"
 import { clock } from '../../assets'
-import AnimatedLine from "./components/AnimatedLine"
+import AnimatedLine from "../../componenets/AnimatedLine"
 import Site from "./components/Site"
 
 export default function ArtisanalClocks() {
@@ -31,7 +31,7 @@ export default function ArtisanalClocks() {
               </p>
             </div>
           </div>
-          <AnimatedLine start={10} max={100} speed={1} />
+          <AnimatedLine start={10} max={20} speed={1} />
         </section>
         {/* Other Sites */}
         <Site title="Dalibor Farny">

@@ -15,14 +15,8 @@ export default forwardRef<HTMLInputElement, Props>((props, ref: Ref<HTMLInputEle
 
   const handlePasswordChange = async (event: ChangeEvent<HTMLInputElement>) => {
     props.setpasswd(event.target.value);
-
-    try {
-      const zxcvbn = await import('zxcvbn');
-      setResult(zxcvbn.default(event.target.value));
-    } catch (error) {
-      console.error('Error loading module or calculating password strength:', error);
-      return null;
-    }
+    const zxcvbn = await import('zxcvbn');
+    setResult(zxcvbn.default(event.target.value));
 
     if (result)
       setErrors(Math.log2(result.guesses) < 22 ? 'Password is too weak' : '');

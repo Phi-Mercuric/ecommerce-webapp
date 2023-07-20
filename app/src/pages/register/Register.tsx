@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import argon2 from 'argon2-wasm-esm';
 import joi from 'joi';
+import { useNavigate } from 'react-router-dom';
 
 import { NewProps, validateEmail } from "./Lib";
 import { Navbar, Footer } from "../../componenets"
@@ -10,6 +11,8 @@ import UsernameInput from "./UsernameInput";
 import EmailInput from "./EmailInput";
 
 export default function Register() {
+  const navigate = useNavigate();
+
   const [passwd, setpasswd] = useState('');
   const passwdInp = useRef<HTMLInputElement>(null);
 
@@ -69,7 +72,7 @@ export default function Register() {
         })
       });
       if (response.ok) {
-        window.location.href = "/login";
+        navigate('/login');
       } else {
         switch (response.status) {
           case 461:

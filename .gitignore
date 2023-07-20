@@ -16,6 +16,7 @@ dist-ssr
 
 # other
 .bkp
+*stats.html*
 
 # Editor directories and files
 .vscode/*

@@ -1,0 +1,11 @@
+{
+  "jwtPrivateKey": "",
+  "port": "3000",
+  "dbcfg": {
+    "user": "",
+    "host": "3000",
+    "database": "",
+    "password": "",
+    "port": "5432"
+  }
+}

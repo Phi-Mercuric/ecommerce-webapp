@@ -1,0 +1,11 @@
+{
+  "jwtPrivateKey": "NixieNet_jwtPrivateKey",
+  "port": "NixieNet_port",
+  "dbcfg": {
+    "user": "NixieNet_dbUser",
+    "host": "NixieNet_dbHost",
+    "database": "NixieNet_dbName",
+    "password": "NixieNet_dbPassword",
+    "port": "NixieNet_db_port"
+  }
+}

@@ -4,6 +4,7 @@ import { db } from '../db.js';
 import * as argon2 from 'argon2';
 import debug from 'debug';
 import jwt from 'jsonwebtoken';
+import config from 'config';
 
 const dbg = debug('server:users');
 const router = Router();
@@ -26,7 +27,6 @@ router.post('/auth', async (req, res) => {
 
   // - Username/Email -
   // "username" is what the user entered, it could be either an email or a username (but user is prompted for username)
-  const test = 'reidbandy';
   const dbRes = await db.query('SELECT password FROM users WHERE username = $1 OR email = $1', [username]);
 
   if (dbRes.rows.length != 1) {
@@ -39,12 +39,16 @@ router.post('/auth', async (req, res) => {
   }
 
   // --- JWT ---
-  jwt.sign({ _id: dbRes.rows[0]._id }, 'replace with env var', { expiresIn: '1h' }, (err, token) => {
-    if (err)
-      dbg("\tJWT error: ", err, "\n}") // replace with proper error handling
-    else
-      res.send(token)
-  });
+  jwt.sign(
+    { _id: dbRes.rows[0]._id },                       // Payload
+    config.get('jwtPrivateKey') as string,            // Private Key
+    { expiresIn: '1h' },                              // Expiration
+    (err, token) => {                                 // Callback
+      if (err)                                          // Error handling           
+        dbg("\tJWT error: ", err, "\n}")                  // replace with proper error handling
+      else                                              // Success
+        res.send(token)
+    });
 });
 
 export default router;

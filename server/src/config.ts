@@ -1,12 +1,9 @@
 import config from 'config'
 
-const requiredEnvVars = ["NixieNet_dbUser", "NixieNet_dbHost", "NixieNet_dbName", "NixieNet_dbPassword", "NixieNet_db_port", "NixieNet_port"]
+const requiredEnvVars = ["jwtPrivateKey", "dbcfg.user", "dbcfg.host", "dbcfg.database", "dbcfg.password"]
 
 export const initEnvVars = () => {
   const missingEnvVars = requiredEnvVars.filter((envVar) => !config.has(envVar));
-  return missingEnvVars.length === 0
-    ? 'All required environment variables are set.'
-    : `Missing environment variables: ${missingEnvVars.join(', ')}`;
-
-
+  if (missingEnvVars.length !== 0)
+    throw new Error(`Missing environment variables: ${missingEnvVars.join(', ')}`);
 }

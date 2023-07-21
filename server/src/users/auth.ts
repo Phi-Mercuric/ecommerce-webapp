@@ -31,7 +31,6 @@ router.post('/auth', async (req, res) => {
 
   if (dbRes.rows.length != 1) {
     dbg("\tEmail doesn't exist\n}")
-    dbg(dbRes)
     return res.status(472).send('Username or email doesn\'t exist');
   } else if (!await argon2.verify(dbRes.rows[0].password, password)) {
     dbg("\tWrong password\n}")
@@ -44,8 +43,10 @@ router.post('/auth', async (req, res) => {
     config.get('jwtPrivateKey') as string,            // Private Key
     { expiresIn: '1h' },                              // Expiration
     (err, token) => {                                 // Callback
-      if (err)                                          // Error handling           
+      if (err) {                                         // Error handling           
         dbg("\tJWT error: ", err, "\n}")                  // replace with proper error handling
+        res.status(500).send('Internal Server Error');
+      }
       else                                              // Success
         res.send(token)
     });

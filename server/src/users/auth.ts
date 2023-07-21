@@ -43,12 +43,12 @@ router.post('/auth', async (req, res) => {
     config.get('jwtPrivateKey') as string,            // Private Key
     { expiresIn: '1h' },                              // Expiration
     (err, token) => {                                 // Callback
-      if (err) {                                         // Error handling           
+      if (err) {                                        // Error handling           
         dbg("\tJWT error: ", err, "\n}")                  // replace with proper error handling
         res.status(500).send('Internal Server Error');
       }
       else                                              // Success
-        res.send(token)
+        res.header('x-auth-token', token).send();
     });
 });
 

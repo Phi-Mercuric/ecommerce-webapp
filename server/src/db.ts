@@ -1,8 +1,15 @@
 import Pool from "pg-pool";
-import { dbcfg } from "./config.js";
-import { userSchema } from "./models/user.js";
+import config from 'config'
+import { DbConfig } from "./models/db.js";
 
-export const db = new Pool(dbcfg);
+const dbConfig: DbConfig = config.get('dbcfg');
+export const db = new Pool({
+  user: dbConfig.user,
+  host: dbConfig.host,
+  database: dbConfig.database,
+  password: dbConfig.password,
+  port: parseInt(dbConfig.port)
+});
 
 // This should be used in a different fashion to verify a valid database
 // and if not, properly sync the database.

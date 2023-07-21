@@ -1,9 +1,9 @@
-export const dbcfg = {
-  user: 'webapp',
-  host: 'localhost',
-  database: 'server',
-  password: process.env.DB_PASSWORD,
-  port: parseInt(process.env.DB_PORT || '5432', 10),
-}
+import config from 'config'
 
-export const port = parseInt(process.env.PORT || '3000', 10);
+const requiredEnvVars = ["jwtPrivateKey", "dbcfg.user", "dbcfg.host", "dbcfg.database", "dbcfg.password"]
+
+export const initEnvVars = () => {
+  const missingEnvVars = requiredEnvVars.filter((envVar) => !config.has(envVar));
+  if (missingEnvVars.length !== 0)
+    throw new Error(`Missing environment variables: ${missingEnvVars.join(', ')}`);
+}

@@ -3,7 +3,6 @@ import { lazy, Suspense } from 'react';
 
 const Home = lazy(() => import('./pages/home/Home'));
 const ArtisanalClocks = lazy(() => import('./pages/artisanalclocks/ArtisanalClocks'));
-const Parts = lazy(() => import('./pages/parts/Parts'));
 const LogIn = lazy(() => import('./pages/login/Login'));
 const Register = lazy(() => import('./pages/register/Register'));
 
@@ -17,14 +16,6 @@ export default function App() {
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <ArtisanalClocks />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/parts"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Parts />
             </Suspense>
           }
         />

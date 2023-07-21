@@ -7,6 +7,9 @@ export const userSchema = joi.object({
 });
 
 export const authSchema = joi.object({
-  username: joi.string().email().required(),
+  username: joi.alternatives().try(
+    joi.string().min(3).max(30),        // username
+    joi.string().email()                // Email
+  ),
   password: joi.string().required(),
 });
